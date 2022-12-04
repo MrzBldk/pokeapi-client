@@ -1,4 +1,4 @@
-import pokemonsReducer from './PokemonsList'
+import pokemonsReducer from './pokemonsSlice'
 
 describe('pokemons reducer', () => {
     it('should have initial value', () => {

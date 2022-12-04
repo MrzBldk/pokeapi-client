@@ -28,3 +28,103 @@ section {
 section h1 {
   font-size: 3rem;
 }
+
+.pokemon-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/*pokemon stats*/
+.pokemon-stat {
+  margin-left: 1.5rem;
+}
+
+.pokemon-stat .high {
+  color: green;
+}
+
+.tag {
+  display: inline-block;
+  padding: .25em .4em;
+  font-size: 75%;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: .25rem;
+  color: white;
+}
+
+/*pokemon types*/
+.normal {
+  background: #A8A77A
+}
+
+.fire {
+  background: #EE8130
+}
+
+.water {
+  background: #6390F0
+}
+
+.electric {
+  background: #F7D02C
+}
+
+.grass {
+  background: #7AC74C
+}
+
+.ice {
+  background: #96D9D6
+}
+
+.fighting {
+  background: #C22E28
+}
+
+.poison {
+  background: #A33EA1
+}
+
+.ground {
+  background: #E2BF65
+}
+
+.flying {
+  background: #A98FF3
+}
+
+.psychic {
+  background: #F95587
+}
+
+.bug {
+  background: #A6B91A
+}
+
+.rock {
+  background: #B6A136
+}
+
+.ghost {
+  background: #735797
+}
+
+.dragon {
+  background: #6F35FC
+}
+
+.dark {
+  background: #705746
+}
+
+.steel {
+  background: #B7B7CE
+}
+
+.fairy {
+  background: #D685AD
+}

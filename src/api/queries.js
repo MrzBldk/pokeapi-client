@@ -19,6 +19,10 @@ const getPokemonInfoQuery = `query getPokemonInfo($name: String!) {
       name
       weight
       height
+      sprites {
+        front_default
+        back_default
+      }
       types {
         type {
           name
@@ -29,11 +33,6 @@ const getPokemonInfoQuery = `query getPokemonInfo($name: String!) {
           name
         }
         base_stat
-      }
-      abilities {
-        ability {
-          name
-        }
       }
     }
   }`
