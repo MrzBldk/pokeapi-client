@@ -1,15 +1,15 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { screen, render } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import { store } from './app/store';
 import App from './App';
 
-test('renders learn react link', () => {
-  const { getByText } = render(
+test('renders navbar links', () => {
+  render(
     <Provider store={store}>
       <App />
     </Provider>
   );
 
-  expect(getByText(/My pokemons/i)).toBeInTheDocument();
+  expect(screen.getByText(/My pokemons/i)).toBeInTheDocument();
 });
