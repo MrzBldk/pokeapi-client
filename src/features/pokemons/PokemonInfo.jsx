@@ -3,6 +3,19 @@ import React, { useState, useEffect } from 'react'
 import { Spinner } from '../../components/Spinner'
 import { fetchPokemonInfo } from '../../api/fetches';
 
+const CatchButton = ({ pokemon }) => {
+
+    const save = () => {
+        const savedPokemons = localStorage.getItem('pokemons')
+        const arr = savedPokemons ? JSON.parse(savedPokemons) : []
+        if (!arr.some(p => p.name === pokemon.name))
+            arr.push(pokemon)
+        localStorage.setItem('pokemons', JSON.stringify(arr))
+    }
+
+    return <button onClick={save} className='button'>Catch!</button>
+}
+
 export const PokemonInfo = ({ match }) => {
 
     const { name } = match.params
@@ -48,6 +61,7 @@ export const PokemonInfo = ({ match }) => {
                 <p><b>Types:</b> {types}</p>
                 <p><b>Stats:</b></p>
                 {stats}
+                <CatchButton pokemon={info} />
             </section>
         )
     } else {

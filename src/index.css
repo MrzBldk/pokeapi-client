@@ -25,6 +25,11 @@ section {
   padding: 0 1.5rem;
 }
 
+article {
+  align-items: center;
+  text-align: center;
+}
+
 section h1 {
   font-size: 3rem;
 }

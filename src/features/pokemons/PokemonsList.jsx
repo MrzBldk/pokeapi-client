@@ -8,7 +8,7 @@ import { fetchPokemons, selectAllPokemons } from './pokemonsSlice'
 const PokemonExcerpt = ({ pokemon }) => {
     return (
         <article>
-            <img style={{width: '96px', height: '96px'}} src={pokemon.image} alt={pokemon.name} />
+            <img src={pokemon.image} alt={pokemon.name} />
             <div>
                 <h3>{pokemon.name}</h3>
                 <Link to={`/pokemons/${pokemon.name}`} className="button">

@@ -11,7 +11,7 @@ export const Navbar = () => {
                 <div className="navContent">
                     <div className="navLinks">
                         <Link to="/">Pokemons</Link>
-                        <Link to="/Owned">My Pokemons</Link>
+                        <Link to="/owned">My Pokemons</Link>
                     </div>
                 </div>
             </section>

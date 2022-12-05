@@ -9,6 +9,7 @@ import {
 import { Navbar } from './app/Navbar'
 import {PokemonsList} from './features/pokemons/PokemonsList'
 import {PokemonInfo} from './features/pokemons/PokemonInfo'
+import {MyPokemonsList} from './features/pokemons/MyPokemonsList'
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Switch>
           <Route exact path='/' component={PokemonsList} />
           <Route exact path='/pokemons/:name' component={PokemonInfo}/>
+          <Route exact path='/owned' component={MyPokemonsList}/>
           <Redirect to='/' />
         </Switch>
       </div>
