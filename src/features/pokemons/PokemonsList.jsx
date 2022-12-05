@@ -45,7 +45,7 @@ export const PokemonsList = () => {
     }
 
     return (
-        <section>
+        <section className='mainSection'>
             <h2>Pokemons</h2>
             <div className='pokemon-list'>
             {content}

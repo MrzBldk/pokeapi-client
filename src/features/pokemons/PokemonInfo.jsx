@@ -52,7 +52,7 @@ export const PokemonInfo = ({ match }) => {
             </p>
         ))
         content = (
-            <section>
+            <section className='mainSection'>
                 <h2>{info.name}</h2>
                 <img alt={info.name} src={info.sprites.front_default} />
                 <img alt={info.name} src={info.sprites.back_default} />

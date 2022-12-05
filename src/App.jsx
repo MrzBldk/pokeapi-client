@@ -10,6 +10,7 @@ import { Navbar } from './app/Navbar'
 import {PokemonsList} from './features/pokemons/PokemonsList'
 import {PokemonInfo} from './features/pokemons/PokemonInfo'
 import {MyPokemonsList} from './features/pokemons/MyPokemonsList'
+import { Footer } from './app/Footer';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Redirect to='/' />
         </Switch>
       </div>
+      <Footer />
     </Router>
   );
 }

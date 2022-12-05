@@ -18,11 +18,20 @@ code {
 }
 
 /* Main content */
+#root {
+  min-height: 100vh;
+  position: relative;
+}
+
 section {
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
   padding: 0 1.5rem;
+}
+
+.mainSection {
+  padding-bottom: 100px;
 }
 
 article {
