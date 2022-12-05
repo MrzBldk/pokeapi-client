@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
 
@@ -34,12 +34,18 @@ export const PokemonsList = () => {
 
     let content
 
+    let [searchTerm, updateSearchTerm] = useState('')
+
+    const handleSearch = event => {
+        updateSearchTerm(event.target.value)
+    };
+
     if (pokemonsStatus === 'loading') {
         content = <Spinner text="Loading..." />
     } else if (pokemonsStatus === 'succeeded') {
-        content = pokemons.map(pokemon => (
-            <PokemonExcerpt key={pokemon.id} pokemon={pokemon} />
-        ))
+        content = pokemons
+            .filter(pokemon => pokemon.name.includes(searchTerm.toLowerCase()))
+            .map(pokemon => <PokemonExcerpt key={pokemon.id} pokemon={pokemon} />)
     } else if (pokemonsStatus === 'failed') {
         content = <div>{error}</div>
     }
@@ -47,8 +53,14 @@ export const PokemonsList = () => {
     return (
         <section className='mainSection'>
             <h2>Pokemons</h2>
+            <input
+                onChange={handleSearch}
+                value={searchTerm}
+                type="text"
+                placeholder="Search"
+            />
             <div className='pokemon-list'>
-            {content}
+                {content}
             </div>
         </section>
     )
