@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useCallback } from 'react'
 
 const MyPokemonExcerpt = ({ pokemon, onChange }) => {
 
@@ -27,9 +27,9 @@ export const MyPokemonsList = () => {
 
     const [myPokemons, setMypokemons] = useState([])
 
-    const [update, setUpdate] = React.useState("");
+    const [update, setUpdate] = useState("");
 
-    const handleChange = React.useCallback((newValue) => {
+    const handleChange = useCallback((newValue) => {
         setUpdate(newValue);
     }, []);
 
