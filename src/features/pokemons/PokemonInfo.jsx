@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
-import { Spinner } from '../../components/Spinner'
-import { fetchPokemonInfo } from '../../api/fetches';
+import { Spinner } from 'components/Spinner'
+import pokeapiFetches from 'api/pokeapi-fetches';
 
 const CatchButton = ({ pokemon }) => {
 
@@ -25,7 +25,7 @@ export const PokemonInfo = ({ match }) => {
     useEffect(() => {
         let ignore = false
         const fetch = async () => {
-            const info = await fetchPokemonInfo(name)
+            const info = await pokeapiFetches.fetchPokemonInfo(name)
             if (!ignore) setInfo(info)
         }
         fetch()

@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 
-import { fetchPokemonList, fetchPokemonCount } from '../../api/fetches'
+import pokeapiFetches from 'api/pokeapi-fetches'
 
 const initialState = {
     pokemons: [],
@@ -9,8 +9,8 @@ const initialState = {
 }
 
 export const fetchPokemons = createAsyncThunk('pokemons/fetchPokemons', async () => {
-    const count = await fetchPokemonCount()
-    const response = await fetchPokemonList(count)
+    const count = await pokeapiFetches.fetchPokemonCount()
+    const response = await pokeapiFetches.fetchPokemonList(count)
     return response
 })
 

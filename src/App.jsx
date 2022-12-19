@@ -6,11 +6,11 @@ import {
   Redirect,
 } from 'react-router-dom'
 
-import { Navbar } from './app/Navbar'
-import {PokemonsList} from './features/pokemons/PokemonsList'
-import {PokemonInfo} from './features/pokemons/PokemonInfo'
-import {MyPokemonsList} from './features/pokemons/MyPokemonsList'
-import { Footer } from './app/Footer';
+import { Navbar } from 'app/Navbar'
+import {PokemonsList} from 'features/pokemons/PokemonsList'
+import {PokemonInfo} from 'features/pokemons/PokemonInfo'
+import {MyPokemonsList} from 'features/pokemons/MyPokemonsList'
+import { Footer } from 'app/Footer';
 
 function App() {
   return (

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
 
-import { Spinner } from '../../components/Spinner'
+import { Spinner } from 'components/Spinner'
 import { fetchPokemons, selectAllPokemons } from './pokemonsSlice'
 
 const PokemonExcerpt = ({ pokemon }) => {

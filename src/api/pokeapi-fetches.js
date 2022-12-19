@@ -1,13 +1,13 @@
-import { getPokemonCountQuery, getPokemonListQuery, getPokemonInfoQuery } from "./queries";
+import pokeapiQueries from "./pokeapi-queries";
 
-const url = 'https://graphql-pokeapi.graphcdn.app/'
+const url = process.env.REACT_APP_POKEAPI_URL
 
 async function fetchPokemonCount() {
     const countResponce = await fetch(url, {
         credentials: 'omit',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-            query: getPokemonCountQuery
+            query: pokeapiQueries.getPokemonCountQuery
         }),
         method: 'POST',
     })
@@ -20,7 +20,7 @@ async function fetchPokemonList(limit) {
         credentials: 'omit',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-            query: getPokemonListQuery,
+            query: pokeapiQueries.getPokemonListQuery,
             variables: { offset: 0, limit }
         }),
         method: 'POST',
@@ -34,7 +34,7 @@ async function fetchPokemonInfo(name) {
         credentials: 'omit',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-            query: getPokemonInfoQuery,
+            query: pokeapiQueries.getPokemonInfoQuery,
             variables: { name }
         }),
         method: 'POST',
@@ -44,4 +44,6 @@ async function fetchPokemonInfo(name) {
     return pokemon
 }
 
-export { fetchPokemonCount, fetchPokemonList, fetchPokemonInfo }
+const pokeapiFetches = { fetchPokemonCount, fetchPokemonList, fetchPokemonInfo }
+
+export default pokeapiFetches

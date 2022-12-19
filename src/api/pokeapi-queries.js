@@ -37,4 +37,6 @@ const getPokemonInfoQuery = `query getPokemonInfo($name: String!) {
     }
   }`
 
-export { getPokemonCountQuery, getPokemonListQuery, getPokemonInfoQuery }
+const pokeapiQueries = { getPokemonCountQuery, getPokemonListQuery, getPokemonInfoQuery }
+
+export default pokeapiQueries 

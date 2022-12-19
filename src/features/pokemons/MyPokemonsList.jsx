@@ -39,15 +39,13 @@ export const MyPokemonsList = () => {
         setMypokemons(arr)
     }, [update])
 
-    let content = myPokemons.map(pokemon => (
-        <MyPokemonExcerpt key={pokemon.name} pokemon={pokemon} onChange={handleChange} />
-    ))
-
     return (
         <section className='mainSection'>
             <h2>My Pokemons</h2>
             <div className='pokemon-list'>
-                {content}
+                {myPokemons.map(pokemon => (
+                    <MyPokemonExcerpt key={pokemon.name} pokemon={pokemon} onChange={handleChange} />
+                ))}
             </div>
         </section>
     )
